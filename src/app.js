@@ -1,8 +1,14 @@
+/**
+ * File: src/app.js
+ * Date:
+ * Author: Abel L Mbula
+ */
+
 const express = require("express");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 7500;
+
 
 /**
  * App configuration
@@ -13,4 +19,4 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => res.render("index", {title: "Home"}));
 
-app.listen(port, () => console.log(`Listening to requests on http://localhost:${port}`));
+module.exports = app;
